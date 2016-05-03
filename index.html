@@ -88,6 +88,9 @@
 			a1.style.display = 'block';
 			a1.href = '#ifa_' + i;
 			a1.innerText = '_  ' + websites[i];
+			a1.onclick = function() {
+			document.getElementById('ifa_'+i).src =  document.getElementById('ifa_'+i).getAttribute('temp_src');
+			};
 			ind.appendChild(a1);
 			
 			var a2 = document.createElement('a');
@@ -98,13 +101,16 @@
 			
 			var ifa = document.createElement('iframe');
 			ifa.id = 'ifa_' + i;
-			ifa.src = websites[i];
+			//ifa.src = websites[i];
+			ifa.setAttribute('temp_src', websites[i]);
 			ifa.style.height = '100%';
 			ifa.style.width = '100%';
 			ifa.setAttribute('frameborder', 'no');
 			bd.appendChild(ifa);
 			
 			}
+
+alert("tt");
 			</script>
 
 </html>
