@@ -7,50 +7,76 @@
     <meta name="description" content="Zhang2henry.GitHub.com : ">
 
     <title>Zhang2henry.GitHub.com</title>
-    		<script type="text/javascript">
-		
-		function keyDown() {
-		if (event.charCode == 13) {
-			var tk = document.getElementById('txtKey').value;
-			window.open('http://ggss.cf/search?sclient=psy-ab&site=&source=hp&btnG=Search&q=' + encodeURIComponent(tk))
-			}
-			}
-			
-		</script>
-		<style>
-			html, body {
-			height: 100%;
-			width:100%;
-			overflow:hidden;
-			}
-			
-			a {
-			 line-height:20px;
-			}
-			a.visited {
-				color:black;
-			}
-			
-		</style>
+    <script type="text/javascript">
+      
+      function keyDown() {
+      if (event.charCode == 13) {
+      var tk = document.getElementById('txtKey').value;
+      window.open('http://ggss.cf/search?sclient=psy-ab&site=&source=hp&btnG=Search&q=' + encodeURIComponent(tk))
+      }
+      }
+      var websites = [
+      'https://isux.tencent.com',
+      'http://www.51cto.com/',
+      'http://www.cnblogs.com/',
+      'https://yq.aliyun.com/',
+      'http://www.csdn.net/',
+      'http://www.iteye.com/',
+      ''
+      ];
+      
+      function changeInd() {
+      
+      var ind = document.getElementById('ind');
+      if (ind.style.height == '5px') {
+      ind.style.height = '200px';
+      ind.style.width = '100px';
+      } else {
+      ind.style.height = '10px';
+      ind.style.width = '10px';
+      }
+      }
+
+      
+    </script>
+    <style>
+      html, body {
+      height: 100%;
+      width:100%;
+      overflow:hidden;
+      }
+      
+      a {
+      line-height:20px;
+      }
+      a.visited {
+      color:black;
+      }
+      
+    </style>
 
   </head>
 
   <body>
-	<body id="bd" style="padding:10px">
-这里是谷歌查询	<input id="txtKey" onkeypress="keyDown();"/>
-<br/>
-	<a href="oa">这是OA</a><br/>
-	<a href="http://www.baidu.com">这是百度</a><br/>
-	<a href="all.html">看一些技术网站</a><br/>
-	
-	<div id="ind" style="position:fixed; top:200px;left:-230px; width:250px; background-color:RGB(255,255,155); overflow-x:hidden;" 
-	onmouseenter="this.lastLeft=this.style.left; this.style.left = '0px';" onmouseleave="this.style.left=this.lastLeft;"></div>
-	</body>
-	
-		
-		
-		<script>
-		document.getElementById('txtKey').focus();
-	</script>
+  <body id="bd" style="padding:10px">
+    这里是谷歌查询	<input id="txtKey" onkeypress="keyDown();"/>
+    <br/>
+    <a href="oa">这是OA</a><br/>
+    <a href="http://www.baidu.com">这是百度</a><br/>
+    <a href="all.html">看一些技术网站</a><br/>
+    
+    <div id="ind" style="position:fixed; top:200px;left:-230px; width:250px; background-color:RGB(255,255,155); overflow-x:hidden;" 
+	 onmouseenter="this.lastLeft=this.style.left; this.style.left = '0px';" onmouseleave="this.style.left=this.lastLeft;"></div>
+
+    <div id="ind" style="position:fixed; top:200px;left:-230px; width:250px; background-color:RGB(255,255,155); overflow-x:hidden;" 
+	 onmouseenter="this.lastLeft=this.style.left; this.style.left = '0px';" onmouseleave="this.style.left=this.lastLeft;"></div>
+    <div id="ind2" style="position:fixed; top:200px;right:-230px; width:250px; background-color:RGB(255,255,155); overflow-x:hidden;" 
+	 onmouseenter="this.lastRight=this.style.right; this.style.right = '0px';" onmouseleave="this.style.right=this.lastRight;"></div>
+
+  </body>
+  
+  <script>
+    document.getElementById('txtKey').focus();
+  </script>
 
 </html>
