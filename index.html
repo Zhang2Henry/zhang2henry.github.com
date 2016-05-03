@@ -75,8 +75,36 @@
 
   </body>
   
-  <script>
+  <script type="text/javascript">
     document.getElementById('txtKey').focus();
-  </script>
+    var html = '';
+    var bd = document.getElementById('bd');
+    var ind = document.getElementById('ind');
+    var ind2 = document.getElementById('ind2');
+    var height = bd.clientHeight - 10;
+    for (var i = 0; i < websites.length; ++i) {
+			
+			var a1 = document.createElement('a');
+			a1.style.display = 'block';
+			a1.href = '#ifa_' + i;
+			a1.innerText = '_  ' + websites[i];
+			ind.appendChild(a1);
+			
+			var a2 = document.createElement('a');
+			a2.style.display = 'block';
+			a2.href = '#ifa_' + i;
+			a2.innerText = '_  ' + websites[i];
+			ind2.appendChild(a2);
+			
+			var ifa = document.createElement('iframe');
+			ifa.id = 'ifa_' + i;
+			ifa.src = websites[i];
+			ifa.style.height = '100%';
+			ifa.style.width = '100%';
+			ifa.setAttribute('frameborder', 'no');
+			bd.appendChild(ifa);
+			
+			}
+			</script>
 
 </html>
