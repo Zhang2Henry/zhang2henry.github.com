@@ -18,11 +18,11 @@
       var websites = [
 '#',
       'https://isux.tencent.com',
-      'http://www.51cto.com/',
-      'http://www.cnblogs.com/',
+      'https://www.51cto.com/',
+      'https://www.cnblogs.com/',
       'https://yq.aliyun.com/',
-      'http://www.csdn.net/',
-      'http://www.iteye.com/',
+      'https://www.csdn.net/',
+      'https://www.iteye.com/',
       ''
       ];
       
@@ -60,7 +60,7 @@
 
   <body>
   <body id="bd" style="padding:10px">
-    这里是谷歌查询	<input id="txtKey" onkeypress="keyDown();"/>
+    这里是谷歌查询	<input id="txtKey" onkeypress="keyDown();"/><input type="button" value="search" onclick="keyDown();"/>
     <br/>
     <a href="oa">这是OA</a><br/>
     <a href="http://www.baidu.com">这是百度</a><br/>
@@ -75,30 +75,41 @@
     <div id="ind2" style="position:fixed; top:200px;right:-230px; width:250px; background-color:RGB(255,255,155); overflow-x:hidden;" 
 	 onmouseenter="this.lastRight=this.style.right; this.style.right = '0px';" onmouseleave="this.style.right=this.lastRight;">
 </div>
+<div id="ifa_div" style="width:90%;height:80%;">
+  <iframe id="ifa" style="height:100%;width:100%;" ></iframe>
+</div>
 
   </body>
   
   <script type="text/javascript">
+    function goto(i) {
+      debugger;
+      document.getElementById('ifa_div').innerHTML = '<iframe style="height:100%;width:100%;" src="'+
+      document.getElementById('ifa_'+i).getAttribute('temp_src')+'"></iframe>';
+      //document.getElementById('ifa').src ='';
+      //document.getElementById('ifa').innerHTML = '';
+       //document.getElementById('ifa').src =  document.getElementById('ifa_'+i).getAttribute('temp_src');
+    }
+    
+    
     document.getElementById('txtKey').focus();
     var html = '';
     var bd = document.getElementById('bd');
     var ind = document.getElementById('ind');
     var ind2 = document.getElementById('ind2');
     var height = bd.clientHeight - 10;
+
     for (var i = 0; i < websites.length; ++i) {
 			
 			var a1 = document.createElement('a');
 			a1.style.display = 'block';
-			a1.href =   '#ifa_' + i;
+			a1.href =   'javascript:goto('+i+')';
 			a1.innerText = '_  ' + websites[i];
-			a1.onclick = function() {
-			document.getElementById('ifa_'+i).src =  document.getElementById('ifa_'+i).getAttribute('temp_src');
-			};
 			ind.appendChild(a1);
 			
 			var a2 = document.createElement('a');
 			a2.style.display = 'block';
-			a2.href = '#ifa_' + i;
+			a2.href = 'javascript:goto('+i+')';
 			a2.innerText = '_  ' + websites[i];
 			ind2.appendChild(a2);
 			
