@@ -84,8 +84,9 @@
   <script type="text/javascript">
     function goto(i) {
       debugger;
-      document.getElementById('ifa_div').innerHTML = '<iframe style="height:100%;width:100%;" src="'+
-      document.getElementById('ifa_'+i).getAttribute('temp_src')+'"></iframe>';
+	    window.open( document.getElementById('ifa_'+i).getAttribute('temp_src'));
+      //document.getElementById('ifa_div').innerHTML = '<iframe style="height:100%;width:100%;" src="'+
+      //document.getElementById('ifa_'+i).getAttribute('temp_src')+'"></iframe>';
       //document.getElementById('ifa').src ='';
       //document.getElementById('ifa').innerHTML = '';
        //document.getElementById('ifa').src =  document.getElementById('ifa_'+i).getAttribute('temp_src');
